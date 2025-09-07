@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
@@ -51,7 +52,7 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="py-24 px-6 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -61,12 +62,12 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             O que meus clientes
             <br />
             <span className="text-violet-600">dizem sobre mim</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Resultados que falam por si só. Veja como transformei ideias em 
             experiências digitais de sucesso.
           </p>
@@ -91,7 +92,7 @@ export default function TestimonialsSection() {
               >
                 {stat.number}
               </motion.div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
+              <div className="text-gray-600 dark:text-gray-400 font-medium">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -106,14 +107,14 @@ export default function TestimonialsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="p-8 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
+              <Card className="p-8 bg-white dark:bg-gray-800 border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
                 {/* Quote Icon */}
                 <div className="mb-6">
-                  <Quote className="w-8 h-8 text-violet-600 opacity-60" />
+                  <Quote className="w-8 h-8 text-violet-600 dark:text-violet-400 opacity-60" />
                 </div>
 
                 {/* Content */}
-                <blockquote className="text-gray-700 leading-relaxed mb-6 text-lg">
+                <blockquote className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-lg">
                   &quot;{testimonial.content}&quot;
                 </blockquote>
 
@@ -132,9 +133,9 @@ export default function TestimonialsSection() {
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
-                    <div className="font-bold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.role}</div>
-                    <div className="text-xs text-violet-600 font-medium">{testimonial.company}</div>
+                    <div className="font-bold text-gray-900 dark:text-white">{testimonial.name}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</div>
+                    <div className="text-xs text-violet-600 dark:text-violet-400 font-medium">{testimonial.company}</div>
                   </div>
                 </div>
               </Card>
@@ -150,11 +151,11 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mt-16"
         >
-          <div className="bg-gray-50 rounded-3xl p-8 lg:p-12">
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 lg:p-12">
+            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
               Pronto para ser o próximo case de sucesso?
             </h3>
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
               Vamos conversar sobre como posso ajudar seu projeto a alcançar 
               resultados excepcionais.
             </p>

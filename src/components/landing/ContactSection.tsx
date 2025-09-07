@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -66,7 +67,7 @@ export default function ContactSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-gray-50">
+    <section className="py-24 px-6 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -76,12 +77,12 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Vamos criar algo
             <br />
             <span className="text-violet-600">incrível juntos?</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Estou sempre aberta a novos projetos desafiadores. 
             Vamos conversar sobre como posso ajudar seu negócio a crescer.
           </p>
@@ -96,16 +97,16 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-2"
           >
-            <Card className="p-8 bg-white border-0 shadow-lg">
+            <Card className="p-8 bg-white dark:bg-gray-700 border-0 shadow-lg">
               <div className="flex items-center gap-3 mb-8">
-                <MessageSquare className="w-6 h-6 text-violet-600" />
-                <h3 className="text-2xl font-bold text-gray-900">Conte-me sobre seu projeto</h3>
+                <MessageSquare className="w-6 h-6 text-violet-600 dark:text-violet-400" />
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Conte-me sobre seu projeto</h3>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Nome Completo *
                     </label>
                     <Input
@@ -115,11 +116,11 @@ export default function ContactSection() {
                       onChange={handleChange}
                       placeholder="Seu nome"
                       required
-                      className="w-full"
+                      className="w-full dark:bg-gray-600 dark:border-gray-500 dark:text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Email *
                     </label>
                     <Input
@@ -129,14 +130,14 @@ export default function ContactSection() {
                       onChange={handleChange}
                       placeholder="seu@email.com"
                       required
-                      className="w-full"
+                      className="w-full dark:bg-gray-600 dark:border-gray-500 dark:text-white"
                     />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Empresa
                     </label>
                     <Input
@@ -145,18 +146,18 @@ export default function ContactSection() {
                       value={formData.company}
                       onChange={handleChange}
                       placeholder="Nome da empresa"
-                      className="w-full"
+                      className="w-full dark:bg-gray-600 dark:border-gray-500 dark:text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Tipo de Projeto
                     </label>
                     <select
                       name="project"
                       value={formData.project}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-600 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-600 focus:border-transparent dark:bg-gray-600 dark:text-white"
                     >
                       <option value="">Selecione...</option>
                       <option value="mobile">App Mobile</option>
@@ -169,7 +170,7 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Conte-me sobre seu projeto *
                   </label>
                   <Textarea
@@ -179,7 +180,7 @@ export default function ContactSection() {
                     placeholder="Descreva seu projeto, objetivos e como posso ajudar..."
                     rows={5}
                     required
-                    className="w-full"
+                    className="w-full dark:bg-gray-600 dark:border-gray-500 dark:text-white"
                   />
                 </div>
 
@@ -213,21 +214,21 @@ export default function ContactSection() {
             className="space-y-6"
           >
             {/* Quick Contact */}
-            <Card className="p-6 bg-white border-0 shadow-lg">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Contato Rápido</h3>
+            <Card className="p-6 bg-white dark:bg-gray-700 border-0 shadow-lg">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Contato Rápido</h3>
               <div className="space-y-4">
                 {contactMethods.map((method, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-violet-50 transition-colors group">
+                  <div key={index} className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-600 rounded-lg hover:bg-violet-50 dark:hover:bg-violet-900/30 transition-colors group">
                     <div className="flex items-center gap-3">
-                      <method.icon className="w-5 h-5 text-gray-600 group-hover:text-violet-600 transition-colors" />
+                      <method.icon className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors" />
                       <div>
-                        <div className="font-medium text-gray-900">{method.title}</div>
-                        <div className="text-sm text-gray-600">{method.description}</div>
+                        <div className="font-medium text-gray-900 dark:text-white">{method.title}</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-400">{method.description}</div>
                       </div>
                     </div>
                     <a
                       href={method.link}
-                      className="text-sm text-violet-600 hover:text-violet-700 font-medium"
+                      className="text-sm text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 font-medium"
                     >
                       {method.action}
                     </a>
@@ -253,34 +254,34 @@ export default function ContactSection() {
             </Card>
 
             {/* Process Info */}
-            <Card className="p-6 bg-white border-0 shadow-lg">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Próximos Passos</h3>
+            <Card className="p-6 bg-white dark:bg-gray-700 border-0 shadow-lg">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Próximos Passos</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-violet-100 rounded-full flex items-center justify-center text-violet-600 font-bold text-xs flex-shrink-0">
+                  <div className="w-6 h-6 bg-violet-100 dark:bg-violet-900/50 rounded-full flex items-center justify-center text-violet-600 dark:text-violet-400 font-bold text-xs flex-shrink-0">
                     1
                   </div>
                   <div>
-                    <div className="font-medium text-gray-900">Conversa Inicial</div>
-                    <div className="text-gray-600">Discussão sobre objetivos e necessidades</div>
+                    <div className="font-medium text-gray-900 dark:text-white">Conversa Inicial</div>
+                    <div className="text-gray-600 dark:text-gray-400">Discussão sobre objetivos e necessidades</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-violet-100 rounded-full flex items-center justify-center text-violet-600 font-bold text-xs flex-shrink-0">
+                  <div className="w-6 h-6 bg-violet-100 dark:bg-violet-900/50 rounded-full flex items-center justify-center text-violet-600 dark:text-violet-400 font-bold text-xs flex-shrink-0">
                     2
                   </div>
                   <div>
-                    <div className="font-medium text-gray-900">Proposta</div>
-                    <div className="text-gray-600">Orçamento e cronograma detalhados</div>
+                    <div className="font-medium text-gray-900 dark:text-white">Proposta</div>
+                    <div className="text-gray-600 dark:text-gray-400">Orçamento e cronograma detalhados</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-violet-100 rounded-full flex items-center justify-center text-violet-600 font-bold text-xs flex-shrink-0">
+                  <div className="w-6 h-6 bg-violet-100 dark:bg-violet-900/50 rounded-full flex items-center justify-center text-violet-600 dark:text-violet-400 font-bold text-xs flex-shrink-0">
                     3
                   </div>
                   <div>
-                    <div className="font-medium text-gray-900">Início do Projeto</div>
-                    <div className="text-gray-600">Kick-off e primeira sprint</div>
+                    <div className="font-medium text-gray-900 dark:text-white">Início do Projeto</div>
+                    <div className="text-gray-600 dark:text-gray-400">Kick-off e primeira sprint</div>
                   </div>
                 </div>
               </div>

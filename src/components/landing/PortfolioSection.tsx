@@ -76,7 +76,7 @@ export default function PortfolioSection() {
     : projects.filter(project => project.category === selectedCategory);
 
   return (
-    <section className="py-24 px-6 bg-gray-50">
+    <section className="py-24 px-6 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -86,12 +86,12 @@ export default function PortfolioSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Projetos que fazem a
             <br />
             <span className="text-violet-600">diferença no mercado</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Uma seleção cuidadosa dos meus trabalhos mais impactantes, 
             mostrando versatilidade e excelência em diferentes setores.
           </p>
@@ -112,7 +112,7 @@ export default function PortfolioSection() {
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 selectedCategory === category.id
                   ? 'bg-violet-600 text-white shadow-lg'
-                  : 'bg-white text-gray-600 hover:bg-violet-50 hover:text-violet-600'
+                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-violet-50 dark:hover:bg-gray-700/50 hover:text-violet-600 dark:hover:text-violet-400'
               }`}
             >
               {category.label}
@@ -134,7 +134,7 @@ export default function PortfolioSection() {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 group overflow-hidden">
+              <Card className="bg-white dark:bg-gray-800 border-0 shadow-lg hover:shadow-xl transition-all duration-500 group overflow-hidden">
                 {/* Image */}
                 <div className="relative overflow-hidden">
                   <img
@@ -144,13 +144,13 @@ export default function PortfolioSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-violet-600 hover:text-white transition-colors cursor-pointer">
+                    <div className="w-10 h-10 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center hover:bg-violet-600 hover:text-white transition-colors cursor-pointer">
                       <ExternalLink className="w-5 h-5" />
                     </div>
                   </div>
                   <Badge 
                     variant="secondary" 
-                    className="absolute top-4 left-4 bg-white/90 text-gray-700"
+                    className="absolute top-4 left-4 bg-white/90 dark:bg-gray-900/90 text-gray-700 dark:text-gray-300"
                   >
                     {project.type}
                   </Badge>
@@ -158,10 +158,10 @@ export default function PortfolioSection() {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-violet-600 transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
                     {project.description}
                   </p>
                   
@@ -170,7 +170,7 @@ export default function PortfolioSection() {
                     {project.tags.map((tag, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md"
+                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded-md"
                       >
                         {tag}
                       </span>
